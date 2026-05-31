@@ -1,0 +1,335 @@
+{
+  "provider": "autogen_agentchat.teams.RoundRobinGroupChat",
+  "component_type": "team",
+  "version": 1,
+  "component_version": 1,
+  "description": "Banca de Consultoria Completa InvestMind AI com 8 agentes especialistas.",
+  "label": "InvestMind AI - 8 Agentes",
+  "config": {
+    "participants": [
+      {
+        "provider": "autogen_agentchat.agents.AssistantAgent",
+        "component_type": "agent",
+        "version": 1,
+        "component_version": 1,
+        "description": "Coordenador do debate e fluxo da consultoria.",
+        "config": {
+          "name": "Orquestrador",
+          "description": "Agente principal que toma a decisão final.",
+          "system_message": "Você é o Orquestrador analítico. O seu ÚNICO papel agora é receber a dúvida do usuário e repassar a palavra diretamente para o Analista Macro. NÃO responda à pergunta, NÃO simule o debate e NÃO crie a carteira. Apenas inicie a reunião pedindo a análise do Macro.",
+          "reflect_on_tool_use": false,
+          "tool_call_summary_format": "{tool_name}: {tool_return_value}",
+          "tools": [],
+          "model_client": {
+            "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+            "component_type": "model",
+            "version": 1,
+            "component_version": 1,
+            "description": "LM Studio Local 20B",
+            "config": {
+              "model": "gpt-oss-20b",
+              "api_key": "lm-studio",
+              "base_url": "http://127.0.0.1:1234/v1",
+              "temperature": 0.1,
+              "model_info": {
+                "family": "unknown",
+                "vision": false,
+                "function_calling": true,
+                "json_output": false,
+                "structured_output": false
+              }
+            }
+          }
+        },
+        "label": "Orquestrador"
+      },
+      {
+        "provider": "autogen_agentchat.agents.AssistantAgent",
+        "component_type": "agent",
+        "version": 1,
+        "component_version": 1,
+        "description": "Especialista em segurança e ativos conservadores.",
+        "config": {
+          "name": "Conservador",
+          "description": "Analista de Renda Fixa.",
+          "system_message": "Você é o Analista Conservador. Seu foco exclusivo é proteção de capital e liquidez. Sugira apenas alocações em Renda Fixa tradicional, como Tesouro Direto (Selic, IPCA+), CDBs com garantia do FGC e fundos DI de taxa zero.",
+          "reflect_on_tool_use": false,
+          "tool_call_summary_format": "{tool_name}: {tool_return_value}",
+          "tools": [],
+          "model_client": {
+            "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+            "component_type": "model",
+            "version": 1,
+            "component_version": 1,
+            "description": "LM Studio Local 20B",
+            "config": {
+              "model": "gpt-oss-20b",
+              "api_key": "lm-studio",
+              "base_url": "http://127.0.0.1:1234/v1",
+              "temperature": 0.1,
+              "model_info": {
+                "family": "unknown",
+                "vision": false,
+                "function_calling": true,
+                "json_output": false,
+                "structured_output": false
+              }
+            }
+          }
+        },
+        "label": "Conservador"
+      },
+      {
+        "provider": "autogen_agentchat.agents.AssistantAgent",
+        "component_type": "agent",
+        "version": 1,
+        "component_version": 1,
+        "description": "Especialista em crescimento moderado e controle de volatilidade.",
+        "config": {
+          "name": "Moderado",
+          "description": "Analista de Alocação Multimercado.",
+          "system_message": "Você é o Analista Moderado. Seu foco é buscar crescimento moderado com controle de volatilidade. Sugira alocações equilibradas incluindo Fundos Imobiliários (FIIs), títulos de crédito privado (Debêntures incentivadas, LCI/LCA) e fundos multimercado de risco controlado.",
+          "reflect_on_tool_use": false,
+          "tool_call_summary_format": "{tool_name}: {tool_return_value}",
+          "tools": [],
+          "model_client": {
+            "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+            "component_type": "model",
+            "version": 1,
+            "component_version": 1,
+            "description": "LM Studio Local 20B",
+            "config": {
+              "model": "gpt-oss-20b",
+              "api_key": "lm-studio",
+              "base_url": "http://127.0.0.1:1234/v1",
+              "temperature": 0.1,
+              "model_info": {
+                "family": "unknown",
+                "vision": false,
+                "function_calling": true,
+                "json_output": false,
+                "structured_output": false
+              }
+            }
+          }
+        },
+        "label": "Moderado"
+      },
+      {
+        "provider": "autogen_agentchat.agents.AssistantAgent",
+        "component_type": "agent",
+        "version": 1,
+        "component_version": 1,
+        "description": "Especialista em alto risco e ações.",
+        "config": {
+          "name": "Agressivo",
+          "description": "Analista de Renda Variable.",
+          "system_message": "Você é o Analista Agressivo. Seu foco é a maximização de lucros no longo prazo através de renda variável. Sugira alocações em ações de crescimento (Small Caps), dividendos, ETFs globais e estratégias táticas de mercado.",
+          "reflect_on_tool_use": false,
+          "tool_call_summary_format": "{tool_name}: {tool_return_value}",
+          "tools": [],
+          "model_client": {
+            "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+            "component_type": "model",
+            "version": 1,
+            "component_version": 1,
+            "description": "LM Studio Local 20B",
+            "config": {
+              "model": "gpt-oss-20b",
+              "api_key": "lm-studio",
+              "base_url": "http://127.0.0.1:1234/v1",
+              "temperature": 0.1,
+              "model_info": {
+                "family": "unknown",
+                "vision": false,
+                "function_calling": true,
+                "json_output": false,
+                "structured_output": false
+              }
+            }
+          }
+        },
+        "label": "Agressivo"
+      },
+      {
+        "provider": "autogen_agentchat.agents.AssistantAgent",
+        "component_type": "agent",
+        "version": 1,
+        "component_version": 1,
+        "description": "Especialista em ativos digitais e assimetria de retorno.",
+        "config": {
+          "name": "Cripto",
+          "description": "Analista de Criptoativos.",
+          "system_message": "Você é o Especialista em Criptoativos. Analise o potencial de ativos digitais e assimetria de retorno. Sugira alocações controladas de base em Bitcoin (BTC) e Ethereum (ETH), além de fundos de índice de cripto regulamentados para diversificação extrema.",
+          "reflect_on_tool_use": false,
+          "tool_call_summary_format": "{tool_name}: {tool_return_value}",
+          "tools": [],
+          "model_client": {
+            "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+            "component_type": "model",
+            "version": 1,
+            "component_version": 1,
+            "description": "LM Studio Local 20B",
+            "config": {
+              "model": "gpt-oss-20b",
+              "api_key": "lm-studio",
+              "base_url": "http://127.0.0.1:1234/v1",
+              "temperature": 0.1,
+              "model_info": {
+                "family": "unknown",
+                "vision": false,
+                "function_calling": true,
+                "json_output": false,
+                "structured_output": false
+              }
+            }
+          }
+        },
+        "label": "Cripto"
+      },
+      {
+        "provider": "autogen_agentchat.agents.AssistantAgent",
+        "component_type": "agent",
+        "version": 1,
+        "component_version": 1,
+        "description": "Especialista em análise de cenário macro, juros e inflação.",
+        "config": {
+          "name": "Macro",
+          "description": "Analista Macroeconômico.",
+          "system_message": "Você é o Analista Macroeconômico. Seu papel é fornecer o panorama técnico do cenário econômico atual (como projeções da taxa Selic, curva de juros, inflação IPCA e câmbio). Oriente a equipe sobre quais setores estão mais favoráveis no ciclo econômico atual.",
+          "reflect_on_tool_use": false,
+          "tool_call_summary_format": "{tool_name}: {tool_return_value}",
+          "tools": [],
+          "model_client": {
+            "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+            "component_type": "model",
+            "version": 1,
+            "component_version": 1,
+            "description": "LM Studio Local 20B",
+            "config": {
+              "model": "gpt-oss-20b",
+              "api_key": "lm-studio",
+              "base_url": "http://127.0.0.1:1234/v1",
+              "temperature": 0.1,
+              "model_info": {
+                "family": "unknown",
+                "vision": false,
+                "function_calling": true,
+                "json_output": false,
+                "structured_output": false
+              }
+            }
+          }
+        },
+        "label": "Macro"
+      },
+      {
+        "provider": "autogen_agentchat.agents.AssistantAgent",
+        "component_type": "agent",
+        "version": 1,
+        "component_version": 1,
+        "description": "Crítico técnico focado na proteção contra volatilidade inadequada.",
+        "config": {
+          "name": "Risco",
+          "description": "Gestor de Riscos e Compliance.",
+          "system_message": "Você é o Gestor de Riscos. Avalie criticamente a carteira consolidada proposta pelos analistas. Calcule riscos de correlação, volatilidade e diversificação inadequada, alertando o investidor sobre possíveis armadilhas e cenários de estresse de mercado.",
+          "reflect_on_tool_use": false,
+          "tool_call_summary_format": "{tool_name}: {tool_return_value}",
+          "tools": [],
+          "model_client": {
+            "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+            "component_type": "model",
+            "version": 1,
+            "component_version": 1,
+            "description": "LM Studio Local 20B",
+            "config": {
+              "model": "gpt-oss-20b",
+              "api_key": "lm-studio",
+              "base_url": "http://127.0.0.1:1234/v1",
+              "temperature": 0.1,
+              "model_info": {
+                "family": "unknown",
+                "vision": false,
+                "function_calling": true,
+                "json_output": false,
+                "structured_output": false
+              }
+            }
+          }
+        },
+        "label": "Risco"
+      },
+      {
+        "provider": "autogen_agentchat.agents.AssistantAgent",
+        "component_type": "agent",
+        "version": 1,
+        "component_version": 1,
+        "description": "Consolidador da proposta final comercial.",
+        "config": {
+          "name": "Apresentador",
+          "description": "Consultor Final e Redator Executivo.",
+          "system_message": "Você é o Apresentador/Consultor Final. Sua missão é consolidar os argumentos de todos os especialistas em uma proposta de consultoria financeira executiva unificada. Formate a saída em Markdown limpo com tabelas de divisão percentual recomendada por perfil. No final absoluto da sua resposta, adicione EXATAMENTE a palavra TERMINATE.",
+          "reflect_on_tool_use": false,
+          "tool_call_summary_format": "{tool_name}: {tool_return_value}",
+          "tools": [],
+          "model_client": {
+            "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+            "component_type": "model",
+            "version": 1,
+            "component_version": 1,
+            "description": "LM Studio Local 20B",
+            "config": {
+              "model": "gpt-oss-20b",
+              "api_key": "lm-studio",
+              "base_url": "http://127.0.0.1:1234/v1",
+              "temperature": 0.1,
+              "model_info": {
+                "family": "unknown",
+                "vision": false,
+                "function_calling": true,
+                "json_output": false,
+                "structured_output": false
+              }
+            }
+          }
+        },
+        "label": "Apresentador"
+      }
+    ],
+    "termination_condition": {
+      "provider": "autogen_agentchat.base.OrTerminationCondition",
+      "component_type": "termination",
+      "version": 1,
+      "component_version": 1,
+      "label": "OrTerminationCondition",
+      "config": {
+        "conditions": [
+          {
+            "provider": "autogen_agentchat.conditions.TextMentionTermination",
+            "component_type": "termination",
+            "version": 1,
+            "component_version": 1,
+            "description": "Termina a conversa se a palavra-chave for mencionada.",
+            "label": "TextMentionTermination",
+            "config": {
+              "text": "TERMINATE"
+            }
+          },
+          {
+            "provider": "autogen_agentchat.conditions.MaxMessageTermination",
+            "component_type": "termination",
+            "version": 1,
+            "component_version": 1,
+            "description": "Trava de segurança expandida para permitir o turno de todos os 8 agentes.",
+            "label": "MaxMessageTermination",
+            "config": {
+              "max_messages": 15,
+              "include_agent_event": false
+            }
+          }
+        ]
+      }
+    },
+    "emit_team_events": false
+  }
+}

@@ -1,15 +1,12 @@
 ### Core e Orquestração
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![AutoGen](https://img.shields.io/badge/Microsoft-AutoGen-0078D4?style=for-the-badge)
-![AutoGen Studio](https://img.shields.io/badge/AutoGen-Studio-4B8BBE?style=for-the-badge)
-![Multi Agent](https://img.shields.io/badge/Architecture-Multi_Agent-success?style=for-the-badge)
-![JSON](https://img.shields.io/badge/Config-JSON-black?style=for-the-badge&logo=json)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=white)
+![AutoGen](https://img.shields.io/badge/AutoGen-Multi--Agent-blue)
+![AutoGen Studio](https://img.shields.io/badge/AutoGen_Studio-Orchestration-4B8BBE)
 
 ### Inferência e Modelos
 
-![LM Studio](https://img.shields.io/badge/LM_Studio-FF6B35?style=for-the-badge)
-![Mistral](https://img.shields.io/badge/Mistral-Models-orange?style=for-the-badge)
-![Llama](https://img.shields.io/badge/Llama-Models-blue?style=for-the-badge)
-![OpenAI Compatible API](https://img.shields.io/badge/API-OpenAI_Compatible-412991?style=for-the-badge)
-![100% Offline](https://img.shields.io/badge/100%25-Offline-success?style=for-the-badge)
+![LM Studio](https://img.shields.io/badge/LM_Studio-Local_Inference-FF6B35)
+![OpenAI Compatible](https://img.shields.io/badge/OpenAI-Compatible_API-412991)
+![Offline AI](https://img.shields.io/badge/100%25-Offline-success)
+

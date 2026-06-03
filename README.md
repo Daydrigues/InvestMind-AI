@@ -9,7 +9,7 @@
 ### Inferência e Modelos
 
 ![LM Studio](https://img.shields.io/badge/LM_Studio-FF6B35?style=for-the-badge)
-![Local LLM](https://img.shields.io/badge/LLM-Local_Inference-green?style=for-the-badge)
+![Mistral](https://img.shields.io/badge/Mistral-Models-orange?style=for-the-badge)
+![Llama](https://img.shields.io/badge/Llama-Models-blue?style=for-the-badge)
 ![OpenAI Compatible API](https://img.shields.io/badge/API-OpenAI_Compatible-412991?style=for-the-badge)
-![Offline](https://img.shields.io/badge/Privacy-100%25_Offline-success?style=for-the-badge)
-![Self Hosted](https://img.shields.io/badge/Deployment-Self_Hosted-blue?style=for-the-badge)
+![100% Offline](https://img.shields.io/badge/100%25-Offline-success?style=for-the-badge)
